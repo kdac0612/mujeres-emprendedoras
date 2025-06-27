@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iniciar Sesión</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #fdf7f7, #f1e6e9);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #403d3d;
+    }
+
+    header, footer {
+      background-color: #f1e6e9;
+      text-align: center;
+      padding: 24px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      font-weight: 400;
+    }
+
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e8d9de;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #d77fa1;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(215, 127, 161, 0.15);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .login-box {
+      background-color: #fff;
+      padding: 2.5em;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5em;
+      font-weight: 700;
+      color: #d77fa1;
+    }
+
+    label {
+      font-size: 0.9em;
+      margin-bottom: 0.3em;
+      color: #403d3d;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.8em;
+      margin-bottom: 1em;
+      border: 1px solid #d1d1d6;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    input[type="checkbox"] {
+      accent-color: #d77fa1;
+      margin-right: 6px;
+    }
+
+    .terminos {
+      margin-bottom: 1em;
+      font-size: 0.85em;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9em;
+      background-color: #d77fa1;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c46489;
+    }
+
+    #mensajeBienvenida {
+      font-size: 0.9em;
+      margin-top: 1em;
+      color: green;
+      display: none;
+    }
+
+    #mensajeRechazo {
+      font-size: 0.9em;
+      margin-top: 1em;
+      color: #c62828;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.85em;
+      color: #d77fa1;
+      text-decoration: none;
+    }
+
+    .button-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #403d3d;
+      border-top: 1px solid #e3c7cc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mujeres que Inspiran</h1>
+    <p>Bienvenida al portal de acceso</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="login-box">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="clave" required>
+
+        <div class="terminos">
+          <label>
+            <input type="checkbox" id="acepto"> Acepto los términos y condiciones
+          </label>
+        </div>
+
+        <button type="button" onclick="simularLogin()">Entrar</button>
+
+        <section style="text-align: center;">
+          <p id="mensajeBienvenida">¡Bienvenida! Acceso exitoso.</p>
+          <p id="mensajeRechazo">Debe aceptar los términos y llenar todos los campos.</p>
+        </section>
+
+        <div style="text-align: center;">
+          <a href="registro.html" class="button-link">¿No tienes cuenta? Regístrate aquí</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mujeres que Inspiran - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function simularLogin() {
+      const usuario = document.getElementById("usuario").value;
+      const clave = document.getElementById("clave").value;
+      const acepto = document.getElementById("acepto").checked;
+      const bienvenida = document.getElementById("mensajeBienvenida");
+      const rechazo = document.getElementById("mensajeRechazo");
+
+      if (usuario && clave && acepto) {
+        bienvenida.style.display = "block";
+        rechazo.style.display = "none";
+      } else {
+        bienvenida.style.display = "none";
+        rechazo.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

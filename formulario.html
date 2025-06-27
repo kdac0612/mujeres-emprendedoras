@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suscripción al Boletín</title>
+
+  <!-- Fuente Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #fdf7f7, #ffffff);
+      color: #403d3d;
+    }
+
+    header, footer {
+      background-color: #f1e6e9;
+      color: #403d3d;
+      padding: 24px 32px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e8d9de;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #d77fa1;
+      text-decoration: none;
+      padding: 10px 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(215, 127, 161, 0.15);
+    }
+
+    main {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(215, 127, 161, 0.15);
+    }
+
+    h2 {
+      color: #403d3d;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #665f5f;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #d77fa1;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #d77fa1;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-weight: 700;
+      cursor: not-allowed;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+
+    button.enabled {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    .mensaje-confirmacion {
+      margin-top: 25px;
+      color: #28a745;
+      font-weight: 600;
+      display: none;
+    }
+
+    footer p {
+      font-size: 0.9em;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Boletín Informativo</h1>
+    <p>Mantente al día con nuestras novedades y actualizaciones</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      <h2>Suscríbete a nuestro boletín</h2>
+      <p>Recibe en tu correo electrónico las últimas noticias, ofertas especiales y más información útil.</p>
+      <form onsubmit="mostrarMensaje(event)">
+        <label>
+          <input type="checkbox" id="acepto"> Acepto los términos y condiciones
+        </label>
+        <button id="enviarBtn" disabled>Enviar</button>
+      </form>
+      <p class="mensaje-confirmacion" id="mensaje">¡Gracias por suscribirte!</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mujeres que Inspiran - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const checkbox = document.getElementById('acepto');
+    const boton = document.getElementById('enviarBtn');
+    const mensaje = document.getElementById('mensaje');
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        boton.disabled = false;
+        boton.classList.add('enabled');
+      } else {
+        boton.disabled = true;
+        boton.classList.remove('enabled');
+        mensaje.style.display = 'none';
+      }
+    });
+
+    function mostrarMensaje(e) {
+      e.preventDefault();
+      if (!boton.disabled) {
+        mensaje.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

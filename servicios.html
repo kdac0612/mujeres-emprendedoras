@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Servicios - Mujeres que Inspiran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #fdf7f7;
+      color: #403d3d;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f1e6e9;
+      padding: 24px 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 1em;
+      color: #665f5f;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 12px 0;
+      border-bottom: 1px solid #e8d9de;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #d77fa1;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(215, 127, 161, 0.15);
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .servicios {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(215, 127, 161, 0.15);
+    }
+
+    .servicios h2 {
+      text-align: center;
+      color: #403d3d;
+      font-weight: 700;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .servicio-item {
+      margin-bottom: 40px;
+      border-left: 4px solid #d77fa1;
+      padding-left: 16px;
+    }
+
+    .servicio-item h3 {
+      color: #d77fa1;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 1.25em;
+    }
+
+    .servicio-item p {
+      margin: 0 0 12px;
+      color: #665f5f;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .servicio-item img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      margin-top: 12px;
+    }
+
+    footer {
+      background-color: #f1e6e9;
+      padding: 40px 20px;
+      font-size: 0.95em;
+      color: #403d3d;
+      border-top: 1px solid #e3c7cc;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .footer-contenido {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bloques-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .bloques-footer section {
+      flex: 1 1 300px;
+    }
+
+    .bloques-footer h4 {
+      margin-bottom: 8px;
+      color: #403d3d;
+      font-weight: 700;
+      font-size: 1.05em;
+    }
+
+    .bloques-footer p,
+    .bloques-footer li {
+      color: #665f5f;
+      font-weight: 400;
+    }
+
+    .centrado {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: #665f5f;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 15px;
+      }
+      .servicios {
+        padding: 20px;
+        border-radius: 16px;
+      }
+      .bloques-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .bloques-footer section {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mujeres que Inspiran</h1>
+    <p>Explora nuestros servicios y accede al sistema</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html" aria-current="page">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="servicios">
+      <h2>Nuestros Servicios</h2>
+
+      <div class="servicio-item">
+        <h3>Diseño Web</h3>
+        <p>Creación de sitios web modernos, adaptables y optimizados para cualquier dispositivo.</p>
+        <img src="ejemplo 2.png" alt="Diseño Web">
+      </div>
+
+      <div class="servicio-item">
+        <h3>Desarrollo de Aplicaciones</h3>
+        <p>Aplicaciones personalizadas para escritorio, web y móviles según tus necesidades.</p>
+        <img src="apliaciones.png" alt="Aplicaciones">
+      </div>
+
+      <div class="servicio-item">
+        <h3>Soporte Técnico</h3>
+        <p>Asistencia remota o presencial para resolver problemas de software y hardware.</p>
+        <img src="soporte.png">
+      </div>
+
+      <div class="servicio-item">
+        <h3>Consultoría</h3>
+        <p>Te asesoramos en tecnología, seguridad informática y estrategias digitales.</p>
+        <img src="consultoria.png" alt="Consultoría">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="bloques-footer">
+        <section>
+          <h4>Acerca de Nosotras</h4>
+          <p>Somos una comunidad apasionada de mujeres emprendedoras decididas a transformar ideas en negocios con propósito.</p>
+        </section>
+        <section>
+          <h4>Servicios</h4>
+          <ul style="padding-left: 18px; line-height: 1.6;">
+            <li>Diseño web personalizado</li>
+            <li>Asesorías empresariales</li>
+            <li>Red de mentoría</li>
+            <li>Talleres formativos</li>
+          </ul>
+        </section>
+      </div>
+      <p class="centrado">&copy; 2025 Mujeres que Inspiran</p>
+    </div>
+  </footer>
+
+</body>
+</html>
