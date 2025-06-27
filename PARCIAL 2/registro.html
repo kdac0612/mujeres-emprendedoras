@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Usuario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #fdf7f7, #f1e6e9);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #403d3d;
+    }
+
+    header, footer {
+      background-color: #f1e6e9;
+      color: #403d3d;
+      text-align: center;
+      padding: 24px;
+    }
+
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e8d9de;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 12px 0;
+      margin: 0;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #d77fa1;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(215, 127, 161, 0.15);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(215, 127, 161, 0.15);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #d77fa1;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #403d3d;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #d77fa1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c46489;
+    }
+
+    .mensaje {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 6px;
+      background-color: #f9f0f5;
+      color: #403d3d;
+      text-align: center;
+      max-width: 360px;
+      font-weight: 500;
+    }
+
+    footer p {
+      margin: 4px 0;
+      font-size: 0.9em;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mujeres que Inspiran</h1>
+    <p>Formulario de Registro</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form id="formRegistro">
+      <h2>Registro</h2>
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="clave">Contraseña:</label>
+      <input type="password" id="clave" name="clave" required>
+
+      <label for="confirmar_clave">Confirmar Contraseña:</label>
+      <input type="password" id="confirmar_clave" name="confirmar_clave" required>
+
+      <div id="error" class="error" hidden>⚠️ Las contraseñas no coinciden</div>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <section class="mensaje" id="mensajeEstado">
+      <p id="bienvenido" hidden>✅ Usuario registrado con éxito.</p>
+      <p id="debeIniciar">Por favor, completa el formulario.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>UNIVERSIDAD DE PANAMÁ</strong></p>
+    <p>Facultad de Informática, Electrónica y Comunicación</p>
+    <p>Departamento de Informática Aplicada - Programación Web</p>
+    <p>Profesor: Eliécer Espinosa</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('formRegistro');
+    const bienvenido = document.getElementById('bienvenido');
+    const debeIniciar = document.getElementById('debeIniciar');
+    const error = document.getElementById('error');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const clave = document.getElementById('clave').value;
+      const confirmar = document.getElementById('confirmar_clave').value;
+
+      if (clave !== confirmar) {
+        error.hidden = false;
+        bienvenido.hidden = true;
+        debeIniciar.hidden = true;
+      } else {
+        error.hidden = true;
+        bienvenido.hidden = false;
+        debeIniciar.hidden = true;
+      }
+    });
+  </script>
+
+</body>
+</html>

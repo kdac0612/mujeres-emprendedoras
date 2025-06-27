@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mujeres que Inspiran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuente Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #fdf7f7;
+      color: #403d3d;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f1e6e9;
+      padding: 24px 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e3c7cc;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #403d3d;
+      font-weight: 700;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      font-size: 0.95em;
+      color: #665f5f;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #d77fa1;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(215, 127, 161, 0.1);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .parallax-container {
+      position: relative;
+      overflow: hidden;
+      height: 60vh;
+      width: 100%;
+    }
+
+    .parallax-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      transition: transform 1s ease;
+    }
+
+    .parallax-container:hover img {
+      transform: scale(1.08);
+    }
+
+    .hero-text {
+      text-align: center;
+      padding: 20px;
+      max-width: 800px;
+    }
+
+    .hero-text h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #403d3d;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      color: #665f5f;
+    }
+
+    .cta-button {
+      background-color: #d77fa1;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 16px;
+      font-size: 1em;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-top: 15px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .cta-button:hover {
+      background-color: #c46489;
+    }
+
+    .testimonios {
+      max-width: 800px;
+      text-align: center;
+      font-style: italic;
+      color: #5a4f4f;
+      line-height: 1.6;
+      padding: 0 20px;
+      font-weight: 400;
+    }
+
+    .cuadrante-imagenes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      padding: 20px;
+    }
+
+    .imagen-item {
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(215, 127, 161, 0.15);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .imagen-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .imagen-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      max-height: 180px;
+      object-fit: cover;
+    }
+
+    .imagen-item h3 {
+      margin-top: 12px;
+      color: #403d3d;
+      font-size: 1.2em;
+    }
+
+    .imagen-item p {
+      font-size: 0.95em;
+      color: #665f5f;
+      margin: 10px 0 15px;
+    }
+
+    footer {
+      background-color: #f1e6e9;
+      padding: 24px 32px;
+      font-size: 0.85em;
+      color: #403d3d;
+      border-top: 1px solid #e3c7cc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-contenido {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bloques-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .bloques-footer section {
+      flex: 1 1 300px;
+    }
+
+    .bloques-footer h4 {
+      margin-bottom: 8px;
+      color: #403d3d;
+      font-size: 1.05em;
+      font-weight: 700;
+    }
+
+    .bloques-footer p,
+    .bloques-footer li {
+      color: #665f5f;
+      font-weight: 400;
+    }
+
+    .centrado {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 0.8em;
+      color: #665f5f;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .bloques-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .imagen-item img {
+        max-height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Mujeres que Inspiran</h1>
+      <p>Explora nuestros servicios</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Ingresar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="parallax-container">
+      <img src="https://coordinadoraongd.org/wp-content/uploads/2025/03/1-1300x750.jpg" alt="Imagen principal" />
+    </div>
+
+    <section class="hero-text fade-in">
+      <h2>Impulsamos el cambio, lideramos el presente</h2>
+      <p>Conecta con otras mujeres emprendedoras y transforma tus ideas en impacto.</p>
+      <a href="servicios.html" class="cta-button">Explorar servicios</a>
+    </section>
+
+    <section class="testimonios fade-in">
+      <blockquote>"No se trata de tener tiempo, sino de hacer tiempo." – Ana Torres</blockquote>
+      <blockquote>"Cada negocio fundado por una mujer es una victoria para todas." – Carla Méndez</blockquote>
+    </section>
+
+    <section class="cuadrante-imagenes fade-in">
+      <!-- Cuadrante de imágenes (4 cuadros) -->
+      <div class="imagen-item">
+        <img src="https://www.ioe-emp.org/fileadmin/_processed_/e/5/csm_20210304_N393_Photo_Int_Women_Day_AdobeStock_125064652_4af00b4dbc.jpeg" alt="Mentoría" />
+        <h3>Mentoría</h3>
+        <p>Conecta con mujeres líderes que te acompañarán en tu camino emprendedor.</p>
+        <a href="#" class="cta-button">Más información</a>
+      </div>
+      <div class="imagen-item">
+        <img src="https://www.creatiburon.com/wp-content/uploads/2020/01/Copia-de-articulos-del-blog-rem.jpg" alt="Diseño Web" />
+        <h3>Diseño Web</h3>
+        <p>Sitios visuales y funcionales que elevan tu presencia digital.</p>
+        <a href="#" class="cta-button">Más información</a>
+      </div>
+      <div class="imagen-item">
+        <img src="https://plataformademujeresartistas.wordpress.com/wp-content/uploads/2012/11/dsc_0063.jpg" alt="Talleres" />
+        <h3>Talleres</h3>
+        <p>Capacítate en herramientas clave para tu negocio y crecimiento personal.</p>
+        <a href="#" class="cta-button">Más información</a>
+      </div>
+      <div class="imagen-item">
+        <img src="https://ayudaenaccion.org/uploads/2021/09/13092021-mujeres_accion_portada.jpg" alt="Comunidad" />
+        <h3>Comunidad</h3>
+        <p>Únete a una red de mujeres que comparten, colaboran e inspiran.</p>
+        <a href="#" class="cta-button">Más información</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="bloques-footer">
+        <section>
+          <h4>Acerca de Nosotras</h4>
+          <p>
+            Somos una comunidad apasionada de mujeres emprendedoras decididas a transformar ideas en negocios con propósito.
+          </p>
+        </section>
+        <section>
+          <h4>Servicios</h4>
+          <ul style="padding-left: 18px; line-height: 1.6;">
+            <li>Diseño web personalizado</li>
+            <li>Asesorías empresariales</li>
+            <li>Red de mentoría</li>
+            <li>Talleres formativos</li>
+          </ul>
+        </section>
+      </div>
+      <p class="centrado">&copy; 2025 Mujeres que Inspiran</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

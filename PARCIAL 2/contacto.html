@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contacto - Mujeres que Inspiran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Fuente Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #fdf7f7;
+      color: #403d3d;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f1e6e9;
+      padding: 24px 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #403d3d;
+      font-weight: 700;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 1em;
+      color: #665f5f;
+      font-weight: 400;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 12px 0;
+      border-bottom: 1px solid #e8d9de;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #d77fa1;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(215, 127, 161, 0.15);
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contacto-box {
+      background-color: #ffffff;
+      max-width: 500px;
+      width: 100%;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(215, 127, 161, 0.15);
+    }
+
+    .contacto-box h2 {
+      text-align: center;
+      color: #403d3d;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2em;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      color: #665f5f;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #d77fa1;
+      font-size: 15px;
+      font-family: 'Nunito', sans-serif;
+      color: #403d3d;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #c46489;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 14px;
+      background-color: #d77fa1;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c46489;
+    }
+
+    footer {
+      background-color: #f1e6e9;
+      padding: 40px 20px;
+      font-size: 0.95em;
+      color: #403d3d;
+      border-top: 1px solid #e3c7cc;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .footer-contenido {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bloques-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .bloques-footer section {
+      flex: 1 1 300px;
+    }
+
+    .bloques-footer h4 {
+      margin-bottom: 8px;
+      color: #403d3d;
+      font-weight: 700;
+      font-size: 1.05em;
+    }
+
+    .bloques-footer p,
+    .bloques-footer li {
+      color: #665f5f;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .centrado {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: #665f5f;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 15px;
+      }
+      .bloques-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .bloques-footer section {
+        max-width: 90%;
+      }
+      .contacto-box {
+        padding: 25px 20px;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mujeres que Inspiran</h1>
+    <p>Explora nuestros servicios y accede al sistema</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="contacto-box">
+      <h2>Contáctanos</h2>
+      <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="bloques-footer">
+        <section>
+          <h4>Acerca de Nosotras</h4>
+          <p>Somos una comunidad apasionada de mujeres emprendedoras decididas a transformar ideas en negocios con propósito. Nos une el deseo de crear, liderar y aportar valor desde nuestras experiencias únicas.</p>
+        </section>
+        <section>
+          <h4>Servicios</h4>
+          <ul style="padding-left: 18px; line-height: 1.6;">
+            <li>Diseño web personalizado</li>
+            <li>Asesorías empresariales</li>
+            <li>Red de mentoría</li>
+            <li>Talleres formativos</li>
+          </ul>
+        </section>
+      </div>
+
+      <p class="centrado">&copy; 2025 Mujeres que Inspiran</p>
+    </div>
+  </footer>
+
+</body>
+</html>
